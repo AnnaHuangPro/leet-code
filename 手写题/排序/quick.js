@@ -5,7 +5,7 @@ function quickSort(arr) {
 
   let left = [];
   let right = [];
-  let baseNum = arr[0];
+  let baseNum = arr[0]; // 选取基准值
 
   for(let i = 1; i < arr.length; i++) {
     if(arr[i] < baseNum) {

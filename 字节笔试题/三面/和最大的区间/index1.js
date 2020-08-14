@@ -4,36 +4,9 @@
 // 如数列a为: [3 1 6 4 5 2];
 // 则X值最大的区间为6, 4, 5,
 // X = 4 * (6+4+5) = 60;
-function sum(arr) {
-  let i = 0;
-  j = 1;
-  let sum = arr[0];
-  let min = arr[0];
-  let maxX = min * sum;
-  let s = arr.slice(i, j);
 
-  while (j < arr.length) {
-    // 计算和
-    sum = sum + arr[j];
-    // 判断最小值
-    if (arr[j] < min) {
-      min = arr[j];
-    }
-    // 计算乘积
-    let res = min * sum;
-    
-    if (res > maxX) {
-      maxX = res;
-      s = arr.slice(i, j+1);
-      j++;
-    } else { // 遇到了最小值 小指针与大指针指向最小值右边元素
-      i = i + j + 1;
-      j = i;
-      sum = 0;
-      min = arr[i];
-    }
-  }
-  return { maxX, s };
+function sum(arr) {
+  
 }
 
 console.log(sum([3, 1, 6, 4, 1, 2]));

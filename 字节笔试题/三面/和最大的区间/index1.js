@@ -5,8 +5,17 @@
 // 则X值最大的区间为6, 4, 5,
 // X = 4 * (6+4+5) = 60;
 
+// 
 function sum(arr) {
-  
+  let minItem = arr[0], i = 0, j = 1, x, sum = arr[0];
+  let max = arr[0] * arr[0];
+  while(j < arr.length) {
+    sum += arr[j];
+    
+    
+  }
+
+  return max;
 }
 
 console.log(sum([3, 1, 6, 4, 1, 2]));

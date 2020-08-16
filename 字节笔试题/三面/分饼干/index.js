@@ -11,10 +11,11 @@ function patch(c, cookies) {
   let j = 0;
   for(let i = 0; i < cookies.length; i++) {
     if(cookies[i] >= c[j]) {
-      count++;
       j++;
+      count++;
     }
   }
+  
   return count;
 }
 

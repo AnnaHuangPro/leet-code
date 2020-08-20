@@ -7,15 +7,24 @@
 
 // 
 function sum(arr) {
-  let minItem = arr[0], i = 0, j = 1, x, sum = arr[0];
-  let max = arr[0] * arr[0];
-  while(j < arr.length) {
-    sum += arr[j];
-    
-    
+  let min = arr[0], sum = arr[0], x = min * sum, max = x;
+  let endStart = 0, end = 0, start = 0;
+  for(let i = 1; i < arr.length; i++) {
+    sum += arr[i];
+    min = Math.min(min, arr[i]);
+    x = sum * min;
+    if(x > max) {
+      max = x;
+      end = i;
+      endStart = start;
+    } else {
+      start = i;
+      sum = 0;
+      min = +Infinity;
+    }
   }
-
-  return max;
+  const area = arr.slice(endStart+1, end+1);
+  return {max, area};
 }
 
-console.log(sum([3, 1, 6, 4, 1, 2]));
+console.log(sum([3, 1, 6, 4, 5, 2]));

@@ -7,6 +7,9 @@ function backOrder(root) {
     node.right && dfs(node.right);
     result.push(node.val);
   }
+
+  dfs(root);
+  
   return result;
 }
 
